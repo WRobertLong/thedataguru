@@ -1,0 +1,18 @@
+# Ignore all node_modules and dependencies
+node_modules/
+
+# Ignore logs
+*.log
+
+# Ignore build files
+dist/
+build/
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore environment files
+thedataguru_env/
+.env
+.env.local
