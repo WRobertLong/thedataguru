@@ -1,25 +1,33 @@
-// Function to load the header
-function loadHeader() {
-    fetch('/header.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('header').innerHTML = data;
-        })
-        .catch(error => console.error('Error loading header:', error));
-}
+document.addEventListener("DOMContentLoaded", () => {
+    console.log("Script is running...");
 
-// Function to load the footer
-function loadFooter() {
-    fetch('/footer.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('footer').innerHTML = data;
+    fetch("header.html")
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Failed to load header.html: " + response.status);
+            }
+            return response.text();
         })
-        .catch(error => console.error('Error loading footer:', error));
-}
+        .then(data => {
+            document.getElementById("header").innerHTML = data;
+            console.log("Header loaded successfully.");
+        })
+        .catch(error => {
+            alert("Error loading header: " + error.message);
+        });
 
-// Load header and footer on page load
-document.addEventListener('DOMContentLoaded', () => {
-    loadHeader();
-    loadFooter();
+    fetch("footer.html")
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Failed to load footer.html: " + response.status);
+            }
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById("footer").innerHTML = data;
+            console.log("Footer loaded successfully.");
+        })
+        .catch(error => {
+            alert("Error loading footer: " + error.message);
+        });
 });

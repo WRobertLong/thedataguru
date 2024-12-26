@@ -1,0 +1,123 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+header {
+    background-color: #004085;
+    color: white;
+    text-align: center;
+    padding: 1.5rem 0;
+}
+
+header .logo-container {
+    margin-bottom: 1rem;
+}
+
+header img {
+    max-width: 120px; /* Adjust logo size */
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #ffd700;
+}
+
+main {
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+.about, .cta {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.about ul {
+    list-style: none;
+    margin: 1rem 0;
+}
+
+.about ul li {
+    margin: 0.5rem 0;
+}
+
+.cta .button {
+    display: inline-block;
+    background: #004085;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: background 0.3s ease;
+}
+
+.cta .button:hover {
+    background: #003060;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #004085 !important;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    justify-content: center; /* Center-align logo and flair */
+    gap: 1rem; /* Space between logo and flair */
+    margin-bottom: 0.5rem; /* Add space above the footer text */
+}
+
+.footer-logo {
+    max-width: 100px; /* Set consistent size for the logo */
+}
+
+footer img {
+    max-width: 80px; /* Adjust flair size, separate from logo */
+}
+
+.footer-text {
+    font-size: 0.9rem;
+    color: white; /* Ensure visibility on blue background */
+    text-align: center; /* Center the footer text */
+    margin: 0.5rem 0 0; /* Add slight space above text */
+}
