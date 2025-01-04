@@ -56,3 +56,21 @@ main {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
+/* Scoped Styles for About Sectionon index page */
+#about ul {
+    list-style-type: none; /* Removes the bullet points */
+    padding: 0; /* Removes default padding */
+}
+
+#about li {
+    margin-bottom: 10px; /* Adds spacing between items for better readability */
+}
+
+#about li::before {
+    content: "•"; /* Adds a custom bullet point */
+    color: black; /* Colour for the custom bullet */
+    margin-right: 10px; /* Space between the bullet and text */
+    font-size: 1.5em; /* Adjust size as needed */
+    vertical-align: middle; /* Aligns with the text */
+}
