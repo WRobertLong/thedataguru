@@ -1,19 +1,36 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // Load header
-    fetch('header.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('header').innerHTML = data;
-            console.log('Header loaded successfully.');
-        })
-        .catch(error => console.error('Error loading header:', error));
+document.addEventListener("DOMContentLoaded", function () {
+    console.log("DOM fully loaded, initializing particles.js...");
 
-    // Load footer
-    fetch('footer.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('footer').innerHTML = data;
-            console.log('Footer loaded successfully.');
-        })
-        .catch(error => console.error('Error loading footer:', error));
+    if (typeof particlesJS === "undefined") {
+        console.error("Particles.js library not loaded!");
+    } else {
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: '#ffffff' },
+                shape: { type: 'circle' },
+                opacity: { value: 0.5 },
+                size: { value: 3 },
+                line_linked: { enable: true, distance: 150, color: '#ffffff', opacity: 0.4, width: 1 },
+                move: { enable: true, speed: 3 },
+            },
+            interactivity: {
+                detect_on: 'window',  // Ensure it detects mouse events correctly
+                events: {
+                    onhover: { enable: true, mode: 'repulse' },
+                    onclick: { enable: true, mode: 'push' },
+                    resize: true,
+                },
+                modes: {
+                    repulse: { distance: 150, duration: 0.4 },
+                    push: { particles_nb: 6 },
+                },
+            },
+            retina_detect: true,
+        });
+
+        console.log("Particles.js initialized successfully.");
+    }
 });
+
+console.log("Particles script fully loaded and initialized.");

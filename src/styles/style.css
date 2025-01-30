@@ -1,76 +1,49 @@
-/* General Styles */
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
-    text-align: center;
-}
-
-/* Header Styling */
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 0;
-}
-
-header ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+main {
     display: flex;
     justify-content: center;
-}
-
-header ul li {
-    margin: 0 15px;
-}
-
-header ul li a {
-    color: #fff;
-    text-decoration: none;
-}
-
-header ul li a:hover {
-    text-decoration: underline;
-}
-
-/* Footer Styling */
-#footer {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-
-/* Main Content */
-main {
-    margin: 20px auto;
-    max-width: 800px;
+    align-items: flex-start; /* Align to the top */
+    height: 100vh;
+    text-align: left;
     padding: 20px;
-    background: #fff;
+    z-index: 1; /* Ensure it is above the background */
+}
+
+#about {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Optional, to make text stand out */
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Scoped Styles for About Sectionon index page */
-#about ul {
-    list-style-type: none; /* Removes the bullet points */
-    padding: 0; /* Removes default padding */
+/* Specific bullet point alignment */
+#about ul li {
+    margin-bottom: 15px; /* Set a consistent space between all bullet points */
 }
 
-#about li {
-    margin-bottom: 10px; /* Adds spacing between items for better readability */
+#about ul li:nth-child(n+7) {
+    padding-left: 20px; /* Indent the last 4 points */
 }
 
-#about li::before {
-    content: "•"; /* Adds a custom bullet point */
-    color: black; /* Colour for the custom bullet */
-    margin-right: 10px; /* Space between the bullet and text */
-    font-size: 1.5em; /* Adjust size as needed */
-    vertical-align: middle; /* Aligns with the text */
+#about ul li:first-child {
+    margin-top: 15px; /* Add some space above the first item, if desired */
+}
+
+/* Particles Background */
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8); /* Ensure it's visible */
+}
+
+/* General styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
 }
