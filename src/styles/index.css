@@ -1,25 +1,36 @@
-
 html, body {
   margin: 0;
   padding: 0;
-  height: 100%;
-  transition: background-color 0.5s ease, color 0.5s ease;
+  overflow-x: hidden;
 }
+
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 body.light-theme {
+  --text-color: black;
   background-color: white;
   color: black;
 }
+
 body.dark-theme {
+  --text-color: white;
   background-color: black;
   color: white;
 }
+
+
 #particles-js {
-  position: fixed;
+  position: absolute;
+  top: 100px; /* adjust if your header is taller or shorter */
   width: 100%;
-  height: 100%;
-  z-index: -1;
-  top: 0;
-  left: 0;
+  height: calc(100% - 100px);
+  z-index: 0;
 }
 .content {
   position: relative;
@@ -27,11 +38,140 @@ body.dark-theme {
   text-align: center;
   margin-top: 40vh;
 }
-button {
-  position: fixed;
-  top: 20px;
-  left: 20px;
+button#toggle-theme {
+  position: absolute;
+  top: 80px;
+  left: 30px;
   z-index: 2;
   padding: 10px 15px;
   cursor: pointer;
+  font-weight: bold;
 }
+
+
+/* Header styles */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  z-index: 10;
+  position: relative;
+}
+
+body.light-theme #header-placeholder header {
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+
+body.dark-theme #header-placeholder header {
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+
+header h1 {
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+  gap: 10px;
+  margin: 0;
+  color: var(--text-color);
+}
+
+header ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+header ul li a {
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+header ul li a:hover {
+  text-decoration: underline;
+}
+
+#header-placeholder header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  position: relative;
+  z-index: 10;
+}
+
+#header-placeholder header h1 {
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  color: var(--text-color);
+}
+
+#header-placeholder header ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#header-placeholder header ul li a {
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+#header-placeholder header ul li a:hover {
+  text-decoration: underline;
+}
+
+#header-placeholder header nav {
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hero {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-logo {
+  height: 100px;
+  max-width: 80vw;
+  margin-bottom: 20px;
+}
+
+#job-title-container {
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: var(--text-color);
+}
+
+.hero-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--text-color);
+}
+
